@@ -1,9 +1,11 @@
 from tkinter import *
+from datetime import datetime
 
 tk = Tk()
 
 tk.title("todo Project")
 tk.geometry("500x500")
+tk.configure(background="#94d3f7")
 
 font = ("Courier", 30, "italic")
 
@@ -77,7 +79,7 @@ def delete_item():
 def add_item():
     current_index = list_box.index(END)
     current_index += 1
-    current_text = str(current_index) + ". " + entry.get()
+    current_text = str(current_index) + ". " + entry.get() + "       " + datetime.now().strftime("%m/%d/%Y")
     list_box.insert(END, current_text)
     entry.delete(0, END)
 
