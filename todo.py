@@ -4,10 +4,10 @@ from datetime import datetime
 tk = Tk()
 
 tk.title("todo Project")
-tk.geometry("500x500")
+tk.geometry("300x400")
 tk.configure(background="#94d3f7")
 
-font = ("Courier", 30, "italic")
+font = ("Courier", 15, "italic")
 
 # creating app frame
 
