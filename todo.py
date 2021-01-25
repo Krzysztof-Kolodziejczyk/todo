@@ -12,7 +12,19 @@ font = ("Courier", 15, "italic")
 
 # creating app frame
 
-box_frame = tk.Canvas(root, width=700, height=700)
+
+label_Frame = Frame(root, bg="#94d3f7")
+label_Frame.pack(pady=10)
+
+name_top_label = Label(label_Frame, text="wprowadź nazwę")
+set_date_label = Label(label_Frame, text="wprowadź deadline")
+deadline_lael = Label(label_Frame, text="deadline")
+
+name_top_label.grid(row=0, column=0)
+set_date_label.grid(row=0, column=1,padx=60)
+deadline_lael.grid(row=0, column=2)
+
+box_frame = tk.Canvas(root, width=700, height=650)
 box_frame.pack()
 
 # creating listbox
@@ -23,10 +35,9 @@ list_box = Listbox(
     width=50,
     height=9,
     bg="SystemButtonFace",
-    bd=3,
     fg="black",
     highlightthickness=0,
-    background="white"
+    background="white",
 )
 
 list_box.pack(side=LEFT, fill=BOTH)
@@ -38,7 +49,7 @@ for task in tasks_list:
     list_box.insert(END, task)
 
 # Create scrollbar
-scrollBar = Scrollbar(box_frame)
+scrollBar = Scrollbar(box_frame, bg="#94d3f7")
 scrollBar.pack(side=LEFT, fill=BOTH)
 
 # Add scrollBar
@@ -46,44 +57,36 @@ list_box.config(yscrollcommand=scrollBar)
 scrollBar.config(command=list_box.yview())
 
 # create entry box to add item to the list
-entry = Entry(
-    root,
-    font=("Helveticka", 24)
-)
+entry_frame = Frame(root, bg="#94d3f7")
+entry_frame.pack(pady=30)
 
-entry.pack(pady=10)
+name_label = Label(entry_frame, text = "nazwa zadania")
+deadline_label = Label(entry_frame, text="termin ukończenia")
+
+name_label.grid(row=0, column=0)
+deadline_label.grid(row=0, column=1)
+
+entry = Entry(entry_frame)
+entry.grid(row=1,column=0, padx=5)
+
+deadline_entry = Entry(entry_frame)
+deadline_entry.grid(row=1,column=1, padx=5)
 
 # Create Button Frame
-button_Frame = Frame(root)
+button_Frame = Frame(root, bg="#94d3f7")
 button_Frame.pack(pady=3)
 
 
 # logic functions
 def delete_item():
     list_box.delete(ANCHOR)
-    index = list_box.index(ANCHOR)
-    if index == 0:
-        for i in range(index, list_box.index(END)):
-            tmp = list_box.get(i)[3:]
-            tmp = str(i + 1) + ". " + tmp
-            list_box.delete(i)
-            list_box.insert(i, tmp)
-    else:
-        for i in range(index - 1, list_box.index(END)):
-            print(list_box.get(i))
-            tmp = list_box.get(i)[3:]
-            tmp = str(i + 1) + ". " + tmp
-            list_box.delete(i)
-            list_box.insert(i, tmp)
 
 
 def add_item():
-    if entry.get() != "":
-        current_index = list_box.index(END)
-        current_index += 1
-        current_text = str(current_index) + ". " + entry.get() + "       " + datetime.now().strftime("%m/%d/%Y")
-        list_box.insert(END, current_text)
-        entry.delete(0, END)
+    current_text = entry.get() + "       " + datetime.now().strftime("%m/%d/%Y") + "      " + deadline_entry.get()
+    list_box.insert(END, current_text)
+    entry.delete(0, END)
+    deadline_entry.delete(0,END)
 
 
 def mark_item():
@@ -92,6 +95,10 @@ def mark_item():
         fg="green"
     )
     list_box.selection_clear(0, END)
+
+    element = list_box.get(ANCHOR)
+    delete_item()
+    list_box.insert(END, element)
 
 
 def unmarked_item():
@@ -106,14 +113,7 @@ def unmarked_item():
 def priority_item():
     element = list_box.get(ANCHOR)
     delete_item()
-    tmp = element[3:]
-    tmp = "1. " + tmp
-    for i in range(list_box.size()):
-        element = list_box.get(i)[3:]
-        new_element = str(i + 2) + ". " + element
-        list_box.delete(i)
-        list_box.insert(i, new_element)
-    list_box.insert(0, tmp)
+    list_box.insert(0, element)
 
 
 def deadline_item():
@@ -131,19 +131,15 @@ add_button = Button(button_Frame, text="dodaj ", command=add_item)
 mark_button = Button(button_Frame, text="ukończone", command=mark_item)
 unmarked_button = Button(button_Frame, text="odznacz", command=unmarked_item)
 priority_button = Button(button_Frame, text="nadaj priorytet", command=priority_item)
-deadline_button = Button(button_Frame, text="dodaj deadline", command=deadline_item)
 
 # placing buttons on a gird
-add_button.grid(row=0, column=0, pady=3)
+
 delete_button.grid(row=1, column=0)
-mark_button.grid(row=2, column=0, pady=3)
-unmarked_button.grid(row=3, column=0)
-priority_button.grid(row=4, column=0, pady=3)
-deadline_button.grid(row=5, column=0, pady=10)
+add_button.grid(row=2, column=0,pady=6)
+mark_button.grid(row=3, column=0)
+unmarked_button.grid(row=4, column=0,pady=6)
+priority_button.grid(row=5, column=0)
 
-deadline_entry = tk.Entry(root)
-box_frame.create_window(300, 500, window=deadline_entry)
-
-deadline_entry.pack()
 
 tk.mainloop()
+
