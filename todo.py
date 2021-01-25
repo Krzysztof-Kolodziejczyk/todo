@@ -16,8 +16,8 @@ font = ("Courier", 15, "italic")
 label_Frame = Frame(root, bg="#94d3f7")
 label_Frame.pack(pady=10)
 
-name_top_label = Label(label_Frame, text="wprowadź nazwę")
-set_date_label = Label(label_Frame, text="wprowadź deadline")
+name_top_label = Label(label_Frame, text="nazwa zadania")
+set_date_label = Label(label_Frame, text="data utworzenia")
 deadline_lael = Label(label_Frame, text="deadline")
 
 name_top_label.grid(row=0, column=0)
@@ -60,8 +60,8 @@ scrollBar.config(command=list_box.yview())
 entry_frame = Frame(root, bg="#94d3f7")
 entry_frame.pack(pady=30)
 
-name_label = Label(entry_frame, text = "nazwa zadania")
-deadline_label = Label(entry_frame, text="termin ukończenia")
+name_label = Label(entry_frame, text = "wprowadź nazwę")
+deadline_label = Label(entry_frame, text="wprowadź deadline")
 
 name_label.grid(row=0, column=0)
 deadline_label.grid(row=0, column=1)
@@ -142,4 +142,3 @@ priority_button.grid(row=5, column=0)
 
 
 tk.mainloop()
-
