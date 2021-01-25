@@ -90,15 +90,13 @@ def add_item():
 
 
 def mark_item():
-    list_box.itemconfig(
-        list_box.curselection(),
-        fg="green"
-    )
-    list_box.selection_clear(0, END)
-
     element = list_box.get(ANCHOR)
     delete_item()
     list_box.insert(END, element)
+    list_box.itemconfigure(END, fg="green")
+
+    list_box.selection_clear(0, END)
+
 
 
 def unmarked_item():
