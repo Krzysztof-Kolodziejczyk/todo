@@ -1,0 +1,1 @@
+insert into tasks (description, done) values ('Obelix',true)

@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "task.template.allowMultipleTasks",
+      "type": "java.lang.String",
+      "description": "Description for task.template.allowMultipleTasks."
+  }
+] }
