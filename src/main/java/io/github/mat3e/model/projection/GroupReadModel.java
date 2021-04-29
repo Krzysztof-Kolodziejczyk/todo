@@ -43,4 +43,12 @@ public class GroupReadModel {
     public void setDeadline(LocalDateTime deadline) {
         this.deadline = deadline;
     }
+
+    public Set<GroupTaskReadModel> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(Set<GroupTaskReadModel> tasks) {
+        this.tasks = tasks;
+    }
 }
