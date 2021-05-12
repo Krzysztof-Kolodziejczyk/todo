@@ -8,6 +8,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class GroupReadModel {
+    private int id;
     private String description;
 
     // deadline from the latest task in group
@@ -16,6 +17,7 @@ public class GroupReadModel {
     Set<GroupTaskReadModel> tasks;
 
     public GroupReadModel(TaskGroup source){
+        this.id = source.getId();
         description = source.getDescription();
 
         source.getTasks().stream()
@@ -50,5 +52,13 @@ public class GroupReadModel {
 
     public void setTasks(Set<GroupTaskReadModel> tasks) {
         this.tasks = tasks;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
