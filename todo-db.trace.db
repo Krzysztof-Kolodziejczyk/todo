@@ -542,7 +542,7 @@ alter table tasks add column deadline datetime_interval_code null [50004-199]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302)
-	at io.github.mat3e.TodoApplication.main(TodoApplication.java:11)
+	at TodoApplication.main(TodoApplication.java:11)
 2021-04-22 05:32:49 database: flush
 org.h2.message.DbException: Błąd ogólny: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Downloads/todo/todo-db.mv.db [1.4.200/7]"
 General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Downloads/todo/todo-db.mv.db [1.4.200/7]" [50000-200]
@@ -1118,7 +1118,7 @@ General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302)
-	at io.github.mat3e.TodoApplication.main(TodoApplication.java:11)
+	at TodoApplication.main(TodoApplication.java:11)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Błąd ogólny: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Downloads/todo/todo-db.mv.db [1.4.199/7]"
 General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Downloads/todo/todo-db.mv.db [1.4.199/7]" [50000-199]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
@@ -1186,7 +1186,7 @@ General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302)
-	at io.github.mat3e.TodoApplication.main(TodoApplication.java:11)
+	at TodoApplication.main(TodoApplication.java:11)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Błąd ogólny: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Downloads/todo/todo-db.mv.db [1.4.199/7]"
 General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Downloads/todo/todo-db.mv.db [1.4.199/7]" [50000-199]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
@@ -1291,7 +1291,7 @@ General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302)
-	at io.github.mat3e.TodoApplication.main(TodoApplication.java:11)
+	at TodoApplication.main(TodoApplication.java:11)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Błąd ogólny: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Downloads/todo/todo-db.mv.db [1.4.199/7]"
 General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Downloads/todo/todo-db.mv.db [1.4.199/7]" [50000-199]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
@@ -1359,7 +1359,7 @@ General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302)
-	at io.github.mat3e.TodoApplication.main(TodoApplication.java:11)
+	at TodoApplication.main(TodoApplication.java:11)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Błąd ogólny: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Downloads/todo/todo-db.mv.db [1.4.199/7]"
 General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Downloads/todo/todo-db.mv.db [1.4.199/7]" [50000-199]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
@@ -3516,8 +3516,8 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
 	at io.github.mat3e.adapter.$Proxy118.findAll(Unknown Source)
-	at io.github.mat3e.logic.TaskGroupService.readAll(TaskGroupService.java:28)
-	at io.github.mat3e.controller.TaskGroupController.readAllGroups(TaskGroupController.java:34)
+	at TaskGroupService.readAll(TaskGroupService.java:28)
+	at TaskGroupController.readAllGroups(TaskGroupController.java:34)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -3540,7 +3540,7 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at io.github.mat3e.controller.LoggerFilter.doFilter(LoggerFilter.java:24)
+	at LoggerFilter.doFilter(LoggerFilter.java:24)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
@@ -3607,8 +3607,8 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
 	at io.github.mat3e.adapter.$Proxy118.findAll(Unknown Source)
-	at io.github.mat3e.logic.TaskGroupService.readAll(TaskGroupService.java:28)
-	at io.github.mat3e.controller.TaskGroupController.readAllGroups(TaskGroupController.java:34)
+	at TaskGroupService.readAll(TaskGroupService.java:28)
+	at TaskGroupController.readAllGroups(TaskGroupController.java:34)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -3631,7 +3631,7 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at io.github.mat3e.controller.LoggerFilter.doFilter(LoggerFilter.java:24)
+	at LoggerFilter.doFilter(LoggerFilter.java:24)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
@@ -3699,8 +3699,8 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
 	at io.github.mat3e.adapter.$Proxy118.findAll(Unknown Source)
-	at io.github.mat3e.logic.TaskGroupService.readAll(TaskGroupService.java:28)
-	at io.github.mat3e.controller.TaskGroupController.readAllGroups(TaskGroupController.java:34)
+	at TaskGroupService.readAll(TaskGroupService.java:28)
+	at TaskGroupController.readAllGroups(TaskGroupController.java:34)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -3723,7 +3723,7 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at io.github.mat3e.controller.LoggerFilter.doFilter(LoggerFilter.java:24)
+	at LoggerFilter.doFilter(LoggerFilter.java:24)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
@@ -3800,7 +3800,7 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at io.github.mat3e.controller.LoggerFilter.doFilter(LoggerFilter.java:24)
+	at LoggerFilter.doFilter(LoggerFilter.java:24)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
@@ -3877,7 +3877,7 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at io.github.mat3e.controller.LoggerFilter.doFilter(LoggerFilter.java:24)
+	at LoggerFilter.doFilter(LoggerFilter.java:24)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
@@ -3954,7 +3954,7 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at io.github.mat3e.controller.LoggerFilter.doFilter(LoggerFilter.java:24)
+	at LoggerFilter.doFilter(LoggerFilter.java:24)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
@@ -4473,7 +4473,7 @@ General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302)
-	at io.github.mat3e.TodoApplication.main(TodoApplication.java:13)
+	at TodoApplication.main(TodoApplication.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Błąd ogólny: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Downloads/todo/todo-db.mv.db [1.4.199/7]"
 General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Downloads/todo/todo-db.mv.db [1.4.199/7]" [50000-199]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
@@ -4541,7 +4541,7 @@ General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302)
-	at io.github.mat3e.TodoApplication.main(TodoApplication.java:13)
+	at TodoApplication.main(TodoApplication.java:13)
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Błąd ogólny: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Downloads/todo/todo-db.mv.db [1.4.199/7]"
 General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Downloads/todo/todo-db.mv.db [1.4.199/7]" [50000-199]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
